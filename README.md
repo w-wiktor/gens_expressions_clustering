@@ -12,20 +12,35 @@ A critical challenge in this dataset was the presence of missing values. We impl
 - **Dimensionality Reduction:** PCA was used to map the 7-dimensional time data into 2D space, allowing us to visually verify that the clusters were naturally separating.
 - **Optimal K Selection:** The selection of k=3 was driven by a cross-algorithm validation approach. Both K-Means and Hierarchical Clustering (Ward’s method) consistently highlighted this as the optimal structure. The Elbow Method displayed a distinct point of inflection (diminishing returns in inertia reduction) at $k=3$. Simultaneously, Silhouette Analysis peaked at this value, confirming high cluster cohesion and separation.
 
+<br><br>
+<img width="877" height="621" alt="image" src="https://github.com/user-attachments/assets/382d16b6-780e-4c68-a46b-fcfecfdfc828" />
+<br><br>
+
+
 ## 📈 Detailed Cluster Results
 With the K-Means model set to 3 clusters, we observed the following behaviors:
 
 *   **Cluster 0: The Baseline Group (n=345)**
     - **Behavior:** These genes show relatively flat or 'noisy' horizontal profiles.
     - **Interpretation:** Likely representing 'housekeeping' genes that maintain constant activity levels during the observed period.
+    <br><br>
+    <img width="624" height="548" alt="image" src="https://github.com/user-attachments/assets/362857b8-82e8-49d0-bb58-269d652001ee" />
+    <br><br>
+
 
 *   **Cluster 1: The Early Responders (n=180)**
     - **Behavior:** This group shows high variability in the early time points, often with a slight downward trend or transient fluctuations.
     - **Interpretation:** Genes that are involved in the immediate reaction to the initial stimulus but stabilize or deactivate as time progresses.
+    <br><br>
+    <img width="548" height="527" alt="image" src="https://github.com/user-attachments/assets/d55f7f6c-2e3f-49c0-a347-55612a07ec03" />
+    <br><br>
 
 *   **Cluster 2: The Activated Group (n=89)**
     - **Behavior:** A very distinct and consistent upward trend across the time series.
     - **Interpretation:** Genes that are being progressively 'turned on' or upregulated, representing the core biological response being studied.
+    <br><br>
+    <img width="572" height="560" alt="image" src="https://github.com/user-attachments/assets/edcbc488-89a7-47c8-b8e0-2ee7f1b994dd" />
+    <br><br>
 
 ## ⚙️ Implementation & Deployment
 To make this analysis actionable, we implemented a **Prediction System**. The `predict_gene_cluster` function allows researchers to input a new 7-point expression sequence; the system automatically scales the data and assigns it to one of the three established biological profiles in real-time.
