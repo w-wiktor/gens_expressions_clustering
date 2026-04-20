@@ -10,7 +10,7 @@ A critical challenge in this dataset was the presence of missing values. We impl
 
 ## 🛠 Methodology
 - **Dimensionality Reduction:** PCA was used to map the 7-dimensional time data into 2D space, allowing us to visually verify that the clusters were naturally separating.
-- **Optimal K Selection:** We used the **Elbow Method** (tracking 'Inertia') and **Silhouette Analysis**. While a binary split (k=2) was mathematically strong, **k=3** was selected because it provided a more nuanced and biologically relevant classification of the gene responses.
+- **Optimal K Selection:** The selection of k=3 was driven by a cross-algorithm validation approach. Both K-Means and Hierarchical Clustering (Ward’s method) consistently highlighted this as the optimal structure. The Elbow Method displayed a distinct point of inflection (diminishing returns in inertia reduction) at $k=3$. Simultaneously, Silhouette Analysis peaked at this value, confirming high cluster cohesion and separation.
 
 ## 📈 Detailed Cluster Results
 With the K-Means model set to 3 clusters, we observed the following behaviors:
