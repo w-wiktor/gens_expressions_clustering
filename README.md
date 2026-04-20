@@ -30,5 +30,3 @@ With the K-Means model set to 3 clusters, we observed the following behaviors:
 ## ⚙️ Implementation & Deployment
 To make this analysis actionable, we implemented a **Prediction System**. The `predict_gene_cluster` function allows researchers to input a new 7-point expression sequence; the system automatically scales the data and assigns it to one of the three established biological profiles in real-time.
 
-## 🧠 Final Conclusion
-By moving from data deletion to **imputation**, we successfully analyzed 63% more genes than the initial attempt. The transition to a 3-cluster model provided a significantly clearer picture of the 'Strong Activation' group (Cluster 2), which is often the primary focus in genetic research.
